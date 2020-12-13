@@ -3,29 +3,29 @@
 clear
 clc
 %-------------------------------------------------------------------------%
-%%Equações do Sistema e como condicoes iniciais nao Linear
+%%EquaÃ§Ãµes do Sistema e como condicoes iniciais nao Linear
 A =[0 1;-20 -2];
 B = [0;0];
 C = [1 0];
 D = [0];
 %-------------------------------------------------------------------------%
-%%Equações do Sistema e como condicoes iniciais Linear
+%%EquaÃ§Ãµes do Sistema e como condicoes iniciais Linear
 A1 =[0 1;-20 -2];;
 B1 = [0;4];
 C1 = [1 0];
 D1 = [0];
 %-------------------------------------------------------------------------%
 %-------------------------------------------------------------------------%
-%% Parâmetros de simulação
+%% ParÃ¢metros de simulaÃ§Ã£o
 to = 0;
 tf = 12;
-dt = 0.01;
+dt = 0.001
 t = [to:dt:tf];
 na=size(t,2);
 xo=[(3*pi)/4;0]; 
 %Utilizart xo=[(pi)/4;0]; para Questao E Trabalho 3 
 %------------------------------------------------------------------------%
-%Simulacao euler não linear
+%Simulacao euler nÃ£o linear
 x(:,1)=xo;
 for k=1:na
 m1 = x(1,k);
@@ -35,7 +35,7 @@ x(2, k+1) = m2+dt*(-2*m2-20*sin(m1));
 x1(k+1)=x(1, k+1);
 end
 %-------------------------------------------------------------------------%
-%Simulaçao euler linear
+%SimulaÃ§ao euler linear
 u = ones(1,na);
 x2(:,1)=xo;
 for k =1:na 
@@ -46,7 +46,7 @@ end
 plot(t,x1(:,1:end-1),'g')
 hold on 
 plot(t,x2(1,1:end-1),'b')
-title('Comparação Euler C')
+title('ComparaÃ§Ã£o Euler C')
 ylabel('Saida')
 xlabel('Tempo')
 legend('Euler Nao Linear','Euler Linear')
