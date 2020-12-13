@@ -3,21 +3,21 @@
 clear
 clc
 %-------------------------------------------------------------------------%
-%%Equações do Sistema e como condicoes iniciais%%
+%%EquaÃ§Ãµes do Sistema e como condicoes iniciais%%
 A =[0 1;-20 -2];;
 B = [0;4];
 C = [1 0];
 D = [0];
 %-------------------------------------------------------------------------%
-%% Parâmetros de simulação
+%% ParÃ¢metros de simulaÃ§Ã£o
 to = 0;
 tf = 12;
-dt = 0.01;
+dt = 0.001;
 t = [to:dt:tf];
 na=size(t,2);
 xo=[(3*pi)/4;0]; 
 %-------------------------------------------------------------------------%
-%Simulaçao euler linear
+%SimulaÃ§ao euler linear
 u = ones(1,na);
 x2(:,1)=xo;
 for k =1:na 
@@ -26,7 +26,7 @@ end
 %-------------------------------------------------------------------------%
 %%Plotando os Resultados
 plot(t,x2(1,1:end-1),'b')
-title('Euler Simulção 2')
+title('Euler SimulÃ§Ã£o 2')
 xlabel('Tempo')
 ylabel('Saida')
 grid
